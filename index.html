@@ -5,45 +5,64 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Vishwambhara R Hebbalalu | Portfolio</title>
   <style>
+    :root {
+      --dutch-white: #EFDFBB;
+      --wine: #722F37;
+    }
+
     body {
       font-family: 'Segoe UI', sans-serif;
-      background-color: #fefefe;
+      background-color: var(--dutch-white);
       color: #222;
       line-height: 1.6;
       margin: 0;
-      padding: 0 20px;
+      padding: 0;
     }
-    .container {
+
+    .bordered-container {
       max-width: 800px;
       margin: 50px auto;
+      padding: 40px;
+      background-color: #fff;
+      border-left: 10px solid var(--wine);
+      box-shadow: 0 0 10px rgba(0,0,0,0.05);
     }
+
     h1, h2 {
       border-bottom: 1px solid #ddd;
       padding-bottom: 0.2em;
+      color: var(--wine);
     }
+
     ul {
       padding-left: 20px;
     }
+
     li {
       margin-bottom: 0.6em;
     }
+
     a {
-      color: #0366d6;
+      color: var(--wine);
       text-decoration: none;
     }
+
     a:hover {
       text-decoration: underline;
     }
+
     .contact, .footer {
       margin-top: 30px;
       font-size: 0.95em;
       color: #666;
     }
+
     .footer {
       border-top: 1px solid #eee;
       padding-top: 10px;
     }
   </style>
+</head>
 </head>
 <body>
   <div class="container">
