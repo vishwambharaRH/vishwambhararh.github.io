@@ -1,55 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Photography</title>
-<link rel="stylesheet" href = "style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Photography</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-        <nav class="navbar" id="navbar">
-        <div class="nav-container">
-            <a href="index.html" class="logo">Vishwambhara R Hebbalalu</a>
-            <ul class="nav-menu" id="nav-menu">
-                <li><a href="index.html" class="nav-link">Projects</a></li>
-                <li><a href="photos.html" class="nav-link active">Photography</a></li>
-                <li><a href="index.html#resume" class="nav-link">Resume & Contact</a></li>
-            </ul>
-            <div class="hamburger" id="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-        </div>
-    </nav>
+  <nav class="navbar">
+    <div class="nav-container">
+        <a href="index.html" class="logo">Vishwambhara R Hebbalalu</a>
+        <div class="hamburger" id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <ul class="nav-menu" id="navMenu">
+            <li><a href="index.html" class="nav-link">Home & Projects</a></li>
+            <li><a href="photos.html" class="nav-link">Photography</a></li>
+            <li><a href="index.html#resume" class="nav-link">Resume</a></li>
+        </ul>
+    </div>
+  </nav>
 
-        <main class="main-content">
-                <section id="photography" class="section photography visible">
-            <div class="section-content">
-                <h2 style="font-size: 3rem; margin-bottom: 2rem;">Photography</h2>
-                <p style="font-size: 1.2rem; margin-bottom: 2rem;">Capturing moments and telling stories through the lens</p>
-                <div class="projects-grid">
-                    <div class="project-card">Nature</div>
-                    <div class="project-card">Landscape</div>
-                    <div class="project-card">Urbanscape</div>
-                    <div class="project-card">Architecture</div>
-                </div>
-            </div>
-        </section>
-    </main>
-    <script>
-  const hamburger = document.getElementById('hamburger');
-    const dropdownMenu = document.getElementById('dropdownMenu');
+        <main class="main-content">
+                <section id="photography" class="section photography visible">
+            <div class="section-content">
+                <h2 style="font-size: 3rem; margin-bottom: 2rem;">Photography</h2>
+                <p style="font-size: 1.2rem; margin-bottom: 2rem;">Capturing moments and telling stories through the lens</p>
+                <div class="photography-grid">
+                    <div class="photo-category-card">Nature</div>
+                    <div class="photo-category-card">Landscape</div>
+                    <div class="photo-category-card">Urbanscape</div>
+                    <div class="photo-category-card">Architecture</div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <script>
+        const hamburger = document.getElementById('hamburger');
+        const navMenu = document.getElementById('navMenu'); // Changed ID to match style.css
 
-    hamburger.addEventListener('click', () => {
-      dropdownMenu.classList.toggle('show');
-    });
+        hamburger.addEventListener('click', () => {
+          navMenu.classList.toggle('active');
+          hamburger.classList.toggle('open');
+        });
 
-    document.addEventListener('click', (e) => {
-      if (!hamburger.contains(e.target) && !dropdownMenu.contains(e.target)) {
-        dropdownMenu.classList.remove('show');
-      }
-    });
-</script>
+        // Close menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!hamburger.contains(e.target) && !navMenu.contains(e.target)) {
+                navMenu.classList.remove('active');
+                hamburger.classList.remove('open');
+            }
+        });
+    </script>
 </body>
 </html>

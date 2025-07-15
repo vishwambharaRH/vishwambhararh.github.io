@@ -1,137 +1,282 @@
 body {
     background-color: #0a0a0a;
     color: #f5f5f5;
-  }
+    font-family: 'Arial', sans-serif; /* Added a modern font */
+    margin: 0; /* Remove default body margin */
+    line-height: 1.6;
+}
 
-  .main-content {
-    padding-top: 100px;
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Georgia', serif; /* A more elegant font for headings */
+    color: #ffffff;
+}
+
+.main-content {
+    padding-top: 80px; /* Adjusted to give more space below fixed navbar */
     min-height: 100vh;
-  }
+    box-sizing: border-box; /* Include padding in element's total width and height */
+    text-align: center; /* Center content within main sections */
+}
 
-  .section {
-    padding: 4rem 2rem;
-  }
+.section {
+    padding: 4rem 1rem; /* Adjusted padding for smaller screens */
+    max-width: 1200px; /* Max width for content */
+    margin: 0 auto; /* Center sections */
+}
 
-  .projects-grid {
+.section-content {
+    padding: 0 1rem; /* Inner padding for content */
+}
+
+.navbar {
+    background: #111;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.8rem 1.5rem; /* Slightly reduced padding */
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0; /* Ensure it spans full width */
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5); /* Subtle shadow for depth */
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px; /* Match section width */
+    margin: 0 auto;
+}
+
+.logo {
+    font-size: 1.6rem; /* Slightly larger logo */
+    font-weight: bold;
+    color: #ffffff;
+    text-decoration: none;
+    padding: 0.5rem 0; /* Add padding for clickable area */
+}
+
+.hamburger {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    cursor: pointer;
+    width: 30px; /* Slightly larger hamburger */
+    height: 20px; /* Adjust height for 3 lines */
+    position: relative;
+    z-index: 1001;
+    transition: all 0.3s ease;
+    padding: 5px; /* Add padding for easier clicking */
+    box-sizing: content-box;
+}
+
+.hamburger span {
+    width: 100%; /* Spans full width of hamburger container */
+    height: 3px;
+    background: #ffffff;
+    border-radius: 2px; /* Slightly rounded ends */
+    transition: all 0.3s ease;
+}
+
+/* Animate to X */
+.hamburger.open span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px); /* Adjusted translation */
+}
+.hamburger.open span:nth-child(2) {
+    opacity: 0;
+    transform: translateX(-20px); /* Slide out middle bar */
+}
+.hamburger.open span:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px); /* Adjusted translation */
+}
+
+.nav-menu {
+    display: flex; /* Always display for desktop */
+    list-style: none; /* Remove bullet points */
+    margin: 0;
+    padding: 0;
+    transition: all 0.3s ease-in-out;
+}
+
+.nav-menu li {
+    margin-left: 1.5rem; /* Space between desktop nav items */
+}
+
+.nav-link {
+    color: #ffffff;
+    padding: 0.5rem 0.8rem; /* Adjusted padding */
+    text-decoration: none;
+    transition: all 0.3s ease;
+    border-radius: 5px; /* Subtle rounded corners on hover */
+}
+
+.nav-link:hover {
+    background: rgba(255, 255, 255, 0.15); /* Stronger hover effect */
+    color: #e0e0e0;
+}
+
+/* Mobile styles for navigation */
+@media (max-width: 767px) {
+    .nav-menu {
+        display: none; /* Hide on mobile by default */
+        flex-direction: column;
+        position: absolute;
+        top: 60px; /* Position below navbar */
+        left: 0;
+        width: 100%; /* Full width dropdown */
+        background: #111;
+        padding: 1rem 0;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+        border-radius: 0 0 8px 8px;
+        max-height: 0; /* Hidden by default */
+        overflow: hidden; /* Hide content */
+    }
+
+    .nav-menu.active {
+        display: flex; /* Show when active */
+        max-height: 200px; /* Or enough to show all links */
+    }
+
+    .nav-menu li {
+        margin: 0; /* Remove margin for mobile list items */
+        text-align: center;
+    }
+
+    .nav-link {
+        display: block; /* Make links take full width */
+        padding: 1rem 0; /* More padding for mobile links */
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05); /* Separator lines */
+    }
+
+    .nav-link:last-child {
+        border-bottom: none; /* No separator on last link */
+    }
+}
+
+
+@media (min-width: 768px) {
+    .hamburger {
+        display: none; /* Hide hamburger on desktop */
+    }
+
+    .nav-menu {
+        display: flex; /* Show nav menu on desktop */
+        position: static; /* Reset position for desktop */
+        width: auto;
+        background: transparent;
+        box-shadow: none;
+        max-height: none;
+        overflow: visible;
+        flex-direction: row; /* Ensure row direction for desktop */
+    }
+
+    .nav-link {
+        padding: 0.5rem 0.8rem; /* Restore desktop padding */
+        border-bottom: none;
+    }
+}
+
+/* Project and Photography Grid Styling */
+.projects-grid, .photography-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Adjusted min-width for better mobile layout */
+    gap: 1.5rem; /* Slightly reduced gap */
     margin-top: 3rem;
-  }
+    padding: 0 1rem; /* Ensure padding for grids */
+}
 
-  .project-card {
+.project-card, .photo-category-card {
     background: rgba(255, 255, 255, 0.05);
-    border-radius: 15px;
+    border-radius: 10px; /* Slightly less rounded */
     padding: 2rem;
     transition: all 0.3s ease;
     border: 1px solid rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(10px);
-  }
+    backdrop-filter: blur(5px); /* Slightly less blur */
+    text-align: left; /* Align text within cards */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Distribute space */
+    min-height: 180px; /* Ensure a minimum height for cards */
+}
 
-  .project-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 10px 30px rgba(255, 255, 255, 0.1);
+.project-card:hover, .photo-category-card:hover {
+    transform: translateY(-8px); /* Less aggressive lift */
+    box-shadow: 0 8px 25px rgba(255, 255, 255, 0.1);
     background: rgba(255, 255, 255, 0.08);
-  }
+}
 
-  .project-card h3 {
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
+.project-card h3, .photo-category-card h3 {
+    font-size: 1.4rem; /* Slightly smaller heading for cards */
+    margin-bottom: 0.8rem;
     color: #ffffff;
-  }
+}
 
-  .project-card p {
-    line-height: 1.6;
-    margin-bottom: 1.5rem;
-  }
+.project-card p, .photo-category-card p {
+    line-height: 1.5; /* Slightly tighter line height */
+    margin-bottom: 1rem;
+    font-size: 0.95rem; /* Slightly smaller text */
+}
 
-  .project-link {
+.project-link {
     color: #ffffff;
     text-decoration: none;
     font-weight: bold;
     border-bottom: 2px solid transparent;
-    transition: border-color 0.3s ease;
-  }
+    transition: border-color 0.3s ease, color 0.3s ease;
+    display: inline-block; /* Allows padding and consistent alignment */
+    margin-top: auto; /* Pushes link to the bottom of the card */
+}
 
-  .project-link:hover {
-    border-bottom-color: #ffffff;
-  }
+.project-link:hover {
+    border-bottom-color: #61dafb; /* A subtle, modern highlight color */
+    color: #61dafb; /* Change link color on hover */
+}
 
-  .navbar {
-    background: #111;
-    padding: 1rem 2rem;
+/* Photography specific card styles */
+.photo-category-card {
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 1000;
-  }
-
-  .logo {
-    color: #ffffff;
-    font-size: 1.5rem;
-    font-weight: bold;
-    text-decoration: none;
-  }
-
-  .hamburger {
-    display: flex;
-    flex-direction: column;
     justify-content: center;
-    align-items: center;
-    gap: 4px;
-    cursor: pointer;
-  }
-
-  .hamburger span {
-    width: 25px;
-    height: 3px;
-    background: #ffffff;
-    transition: all 0.3s ease;
-  }
-
-  .dropdown-menu {
-    position: absolute;
-    top: 70px;
-    right: 2rem;
-    background: rgba(0, 0, 0, 0.95);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 10px;
-    padding: 1rem;
-    display: none;
-    flex-direction: column;
-    gap: 1rem;
-    min-width: 150px;
-    animation: fadeInScale 0.3s ease forwards;
-  }
-
-  .dropdown-menu.show {
-    display: flex;
-  }
-
-  .dropdown-menu a {
+    font-size: 1.8rem;
+    font-weight: bold;
     color: #ffffff;
-    text-decoration: none;
-    font-size: 1rem;
-    padding: 0.5rem;
-    border-radius: 5px;
-    transition: background 0.2s ease;
-  }
+    text-align: center;
+    min-height: 150px; /* Adjust height for photography cards */
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.02)); /* Gradient background */
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    cursor: pointer;
+}
 
-  .dropdown-menu a:hover {
-    background: rgba(255, 255, 255, 0.1);
-  }
+.photo-category-card:hover {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
+    transform: scale(1.03); /* Slight zoom effect */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
 
-  @keyframes fadeInScale {
-    from {
-      opacity: 0;
-      transform: scale(0.95);
+/* General typography and spacing */
+p {
+    color: #ccc;
+}
+
+/* Responsive typography */
+@media (max-width: 600px) {
+    h2 {
+        font-size: 2.2rem !important; /* Smaller headings on very small screens */
     }
-    to {
-      opacity: 1;
-      transform: scale(1);
+    .project-card h3 {
+        font-size: 1.2rem;
     }
-  }
+    .project-card p {
+        font-size: 0.9rem;
+    }
+    .photo-category-card {
+        font-size: 1.5rem;
+    }
+    .section {
+        padding: 3rem 0.5rem;
+    }
+}

@@ -7,17 +7,23 @@
  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <nav class="navbar" id="navbar">
-      <a href="index.html" class="logo">Vishwambhara R Hebbalalu</a>
-      <div class="hamburger" id="hamburger">
-        <span></span><span></span><span></span>
-      </div>
-      <div class="dropdown-menu" id="dropdownMenu">
-        <a href="index.html">Home & Projects</a>
-        <a href="photos.html">Photography</a>
-        <a href="index.html#resume">Resume</a>
-      </div>
-  </nav>
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+          <a href="index.html" class="logo">Vishwambhara R Hebbalalu</a>
+
+          <div class="hamburger" id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+
+          <ul class="nav-menu" id="nav-menu">
+            <li><a href="index.html" class="nav-link">Home & Projects</a></li>
+            <li><a href="photos.html" class="nav-link">Photography</a></li>
+            <li><a href="#resume" class="nav-link">Resume</a></li>
+          </ul>
+        </div>
+      </nav>
 
   <main class="main-content">
     <section class="section projects">
@@ -30,22 +36,22 @@
           <div class="project-card">
             <h3>Blogger Word Counter</h3>
             <p>This extension file finds the total word count of a post that is currently being edited in Blogger.com. </p>
-            <a href="https://github.com/vishwambharaRH/Blogger-Word-Counter" class="project-link">View Project →</a>
+            <a href="https://github.com/vishwambharaRH/Blogger-Word-Counter" class="project-link" target="_blank">View Project →</a>
           </div>
           <div class="project-card">
             <h3>News Sentiment Analyzer</h3>
             <p>This extension file provides sentiment analysis and political leaning of a given news webpage's writing. Insert your OpenRouter key to find out about the same.</p>
-            <a href="https://github.com/vishwambharaRH/News-Sentiment-Analyser" class="project-link">View Project →</a>
+            <a href="https://github.com/vishwambharaRH/News-Sentiment-Analyser" class="project-link" target="_blank">View Project →</a>
           </div>
           <div class="project-card">
             <h3>Tapper</h3>
             <p>This is a simple counting app for iOS. Tap the tapping button to see how many counts of X you are counting. Works for most iOS devices.</p>
-            <a href="https://github.com/vishwambharaRH/Tapper" class="project-link">View Project →</a>
+            <a href="https://github.com/vishwambharaRH/Tapper" class="project-link" target="_blank">View Project →</a>
           </div>
           <div class="project-card">
             <h3>This Website</h3>
             <p>This is self-explanatory, I do not need to say anything.</p>
-            <a href="https://github.com/vishwambharaRH/vishwambhararh.github.io" class="project-link">View Project →</a>
+            <a href="https://github.com/vishwambharaRH/vishwambhararh.github.io" class="project-link" target="_blank">View Project →</a>
             </div>
           <div class="project-card">
             <h3>Project Gamma</h3>
@@ -63,18 +69,31 @@
 
   <script>
     const hamburger = document.getElementById('hamburger');
-    const dropdownMenu = document.getElementById('dropdownMenu');
+    const navMenu = document.getElementById('nav-menu');
 
     hamburger.addEventListener('click', () => {
-      dropdownMenu.classList.toggle('show');
+        navMenu.classList.toggle('active');
+        hamburger.classList.toggle('open');
     });
 
+    // Close menu when clicking outside
     document.addEventListener('click', (e) => {
-      if (!hamburger.contains(e.target) && !dropdownMenu.contains(e.target)) {
-        dropdownMenu.classList.remove('show');
-      }
+        if (!hamburger.contains(e.target) && !navMenu.contains(e.target)) {
+            navMenu.classList.remove('active');
+            hamburger.classList.remove('open');
+        }
     });
 
+    // Smooth scroll for resume link
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+
+            document.querySelector(this.getAttribute('href')).scrollIntoView({
+                behavior: 'smooth'
+            });
+        });
+    });
   </script>
 </body>
 </html>
