@@ -502,3 +502,44 @@ p {
         max-height: 200px; /* Adjust height for smaller screens */
     }
 }
+
+/* Profile Photo Section */
+.profile-section {
+    margin: 3rem auto 5rem auto; /* Adjust spacing around the photo */
+    text-align: center;
+    max-width: 300px; /* Constrain width of the container for responsive sizing */
+}
+
+.profile-photo {
+    width: 200px; /* Fixed width for the photo */
+    height: 200px; /* Fixed height for the photo */
+    border-radius: 50%; /* Makes it perfectly circular */
+    object-fit: cover; /* Ensures the image covers the area without distortion */
+    border: 3px solid rgba(255, 255, 255, 0.2); /* Subtle white border */
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.4); /* Soft shadow for depth */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: block; /* Remove extra space below image */
+    margin: 0 auto 1.5rem auto; /* Center the image and add space below */
+}
+
+.profile-photo:hover {
+    transform: scale(1.05); /* Slight zoom on hover */
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.6);
+}
+
+.profile-caption {
+    font-size: 1.1rem;
+    color: #bbb;
+    font-weight: 300;
+}
+
+/* Responsive adjustments for profile photo */
+@media (max-width: 600px) {
+    .profile-photo {
+        width: 150px; /* Smaller photo on small screens */
+        height: 150px;
+    }
+    .profile-caption {
+        font-size: 1rem;
+    }
+}
