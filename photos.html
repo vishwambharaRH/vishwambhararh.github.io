@@ -7,13 +7,68 @@
 <style>
   body {
       background-color: #0a0a0a;
+      color: #f5f5f5;
+    }
+
+    .main-content {
+      padding-top: 100px;
+      min-height: 100vh;
+    }
+
+    .section {
+      padding: 4rem 2rem;
+    }
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+
+    .project-card {
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 15px;
+      padding: 2rem;
+      transition: all 0.3s ease;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+    }
+
+    .project-card:hover {
+      transform: scale(1.05);
+      box-shadow: 0 10px 30px rgba(255, 255, 255, 0.1);
+      background: rgba(255, 255, 255, 0.08);
+    }
+
+    .project-card h3 {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
       color: #ffffff;
     }
+
+    .project-card p {
+      line-height: 1.6;
+      margin-bottom: 1.5rem;
+    }
+
+    .project-link {
+      color: #ffffff;
+      text-decoration: none;
+      font-weight: bold;
+      border-bottom: 2px solid transparent;
+      transition: border-color 0.3s ease;
+    }
+
+    .project-link:hover {
+      border-bottom-color: #ffffff;
+    }
+
     .navbar {
     position: fixed;
     top: 0;
     width: 100%;
-    background: rgba(114, 47, 55, 0.95);
+    background: rgba(0, 0, 0, 0.95);
     backdrop-filter: blur(10px);
     z-index: 1000;
     padding: 1rem 0;
@@ -21,8 +76,8 @@
   }
   
   .navbar.scrolled {
-    background: rgba(255, 255, 255, 0.98);
-    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
+    background: rgba(114, 47, 55, 0.98);
+    box-shadow: 0 2px 20px rgba(114, 47, 55, 0.3);
   }
   
   .nav-container {
@@ -33,11 +88,10 @@
     align-items: center;
     padding: 0 2rem;
   }
-  
   .logo {
     font-size: 1.8rem;
     font-weight: bold;
-    color: #FFFFFF;
+    color: #ffffff;
     text-decoration: none;
     transition: transform 0.3s ease;
   }
@@ -86,80 +140,43 @@
   .nav-link.active {
     background: rgba(239, 223, 187, 0.2);
   }
-  
-  /* Mobile Menu Toggle */
-  .hamburger {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-  width: 30px;
-  height: 22px;
-  cursor: pointer;
-  padding: 5px;
-  box-sizing: content-box;
-}
 
-.hamburger span {
-  width: 100%;
-  height: 3px;
-  background-color: #ffffff;
-  border-radius: 2px;
-  transition: transform 0.3s ease, opacity 0.3s ease;
-}
-
-    .main-content {
-      padding-top: 100px;
-      min-height: 100vh;
+    .hamburger {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      width: 30px;
+      height: 22px;
+      cursor: pointer;
+      padding: 5px;
+      box-sizing: content-box;
+      z-index: 2000;
+      transition: transform 0.3s ease;
     }
 
-    .section {
-      padding: 4rem 2rem;
+    .hamburger span {
+      width: 100%;
+      height: 3px;
+      background-color: #ffffff;
+      border-radius: 2px;
+      transition: transform 0.3s ease, opacity 0.3s ease;
+      transform-origin: center;
     }
 
-    .projects-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 2rem;
-      margin-top: 3rem;
+    .hamburger:hover {
+      transform: scale(1.1);
     }
 
-    .project-card {
-      background: rgba(255, 255, 255, 0.05);
-      border-radius: 15px;
-      padding: 2rem;
-      transition: all 0.3s ease;
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      backdrop-filter: blur(10px);
+    .hamburger.active span:nth-child(1) {
+      transform: rotate(45deg) translate(5px, 5px);
     }
 
-    .project-card:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 10px 30px rgba(255, 255, 255, 0.1);
-      background: rgba(255, 255, 255, 0.08);
+    .hamburger.active span:nth-child(2) {
+      opacity: 0;
     }
 
-    .project-card h3 {
-      font-size: 1.5rem;
-      margin-bottom: 1rem;
-      color: #ffffff;
-    }
-
-    .project-card p {
-      line-height: 1.6;
-      margin-bottom: 1.5rem;
-    }
-
-    .project-link {
-      color: #ffffff;
-      text-decoration: none;
-      font-weight: bold;
-      border-bottom: 2px solid transparent;
-      transition: border-color 0.3s ease;
-    }
-
-    .project-link:hover {
-      border-bottom-color: #ffffff;
+    .hamburger.active span:nth-child(3) {
+      transform: rotate(-45deg) translate(6px, -6px);
     }
 
     @media (max-width: 768px) {
@@ -178,37 +195,6 @@
       .nav-menu.active {
         left: 0;
       }
-
-      .hamburger {
-        display: flex;
-        flex-direction: column;
-        cursor: pointer;
-      }
-
-      .hamburger span {
-        width: 25px;
-        height: 3px;
-        background: #ffffff;
-        margin: 3px 0;
-        transition: 0.3s;
-      }
-    }
-
-    .navbar {
-      background: #111;
-    }
-
-    .nav-link {
-      color: #f5f5f5;
-    }
-
-    .nav-link.active {
-      font-weight: bold;
-      color: #ffffff;
-    }
-
-    .logo {
-      color: #ffffff;
     }
 </style>
 </head>
