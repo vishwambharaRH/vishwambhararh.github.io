@@ -320,3 +320,121 @@ p {
         margin-top: 0;
     }
 }
+
+---
+/* Resume Section Styling */
+.resume {
+    background: #0f0f0f; /* Slightly lighter dark background for contrast */
+    padding: 6rem 1rem; /* More padding for resume section */
+}
+
+.resume-download-card {
+    background: rgba(255, 255, 255, 0.08); /* A bit more prominent than project cards */
+    border-radius: 12px;
+    padding: 2.5rem;
+    margin: 3rem auto;
+    max-width: 600px;
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+}
+
+.resume-download-card h3 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    color: #61dafb; /* Highlight color for the call to action */
+}
+
+.resume-download-card p {
+    font-size: 1rem;
+    margin-bottom: 2rem;
+    color: #ccc;
+}
+
+.download-button {
+    display: inline-block;
+    background-color: #61dafb; /* Your accent color */
+    color: #111; /* Dark text on light button */
+    padding: 0.9rem 2.5rem;
+    border-radius: 50px; /* Pill shape */
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(97, 218, 251, 0.4);
+}
+
+.download-button:hover {
+    background-color: #4ac1e6; /* Slightly darker on hover */
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(97, 218, 251, 0.6);
+}
+
+.resume-details {
+    text-align: left; /* Align details to the left */
+    max-width: 900px; /* Wider for resume content */
+    margin: 4rem auto 0 auto;
+    padding: 0 1rem;
+}
+
+.resume-details h3 {
+    font-size: 2rem;
+    margin-top: 3rem;
+    margin-bottom: 1.5rem;
+    color: #ffffff;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.1); /* Subtle separator */
+    padding-bottom: 0.5rem;
+}
+
+.experience-item, .education-item {
+    margin-bottom: 2.5rem;
+}
+
+.experience-item h4, .education-item h4 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: #61dafb; /* Highlight names/titles */
+}
+
+.experience-item .duration, .education-item .duration {
+    font-size: 0.95rem;
+    color: #bbb;
+    margin-bottom: 0.8rem;
+    display: block; /* Ensure it's on its own line */
+}
+
+.experience-item ul {
+    list-style-type: disc; /* Or 'none' if you prefer */
+    margin-left: 25px; /* Indent list items */
+    padding: 0;
+    color: #ccc;
+}
+
+.experience-item ul li {
+    margin-bottom: 0.5rem;
+}
+
+.skills-list {
+    line-height: 2; /* More space between lines of skills */
+    color: #ccc;
+}
+
+/* Responsive adjustments for resume section */
+@media (max-width: 767px) {
+    .resume-download-card {
+        padding: 1.5rem;
+    }
+    .resume-download-card h3 {
+        font-size: 1.5rem;
+    }
+    .download-button {
+        font-size: 1rem;
+        padding: 0.7rem 2rem;
+    }
+    .resume-details h3 {
+        font-size: 1.8rem;
+    }
+    .experience-item h4, .education-item h4 {
+        font-size: 1.3rem;
+    }
+}
