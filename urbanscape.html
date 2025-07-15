@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nature Photography | Vishwambhara H</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">Vishwambhara R Hebbalalu</a>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html" class="nav-link">Home & Projects</a></li>
+                <li><a href="photos.html" class="nav-link">Photography</a></li>
+                <li><a href="index.html#resume" class="nav-link">Resume</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="main-content">
+        <section class="section gallery-page">
+            <div class="section-content">
+                <h2 style="font-size: 3rem; margin-bottom: 1.5rem;">Urban Photography</h2>
+                <p style="font-size: 1.2rem; margin-bottom: 3rem; color: #ccc;">A collection of my favorite captures from the natural world.</p>
+
+                <div class="photo-gallery-grid">
+                    <div class="gallery-item">
+                        <img src="images/nature/nature-photo1.jpg" alt="Description of Nature Photo 1">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="images/nature/nature-photo2.jpg" alt="Description of Nature Photo 2">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="images/nature/nature-photo3.jpg" alt="Description of Nature Photo 3">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="images/nature/nature-photo4.jpg" alt="Description of Nature Photo 4">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="images/nature/nature-photo5.jpg" alt="Description of Nature Photo 5">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="images/nature/nature-photo6.jpg" alt="Description of Nature Photo 6">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="images/nature/nature-photo7.jpg" alt="Description of Nature Photo 7">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="images/nature/nature-photo8.jpg" alt="Description of Nature Photo 8">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="images/nature/nature-photo9.jpg" alt="Description of Nature Photo 9">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="images/nature/nature-photo10.jpg" alt="Description of Nature Photo 10">
+                    </div>
+                    </div>
+
+                <p style="margin-top: 4rem;">
+                    <a href="photos.html" class="back-link">&larr; Back to Photography Categories</a>
+                </p>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <p>&copy; 2025 Vishwambhara R Hebbalalu. All rights reserved.</p>
+            <div class="social-links">
+                <a href="https://github.com/vishwambharaRH" target="_blank" aria-label="GitHub"><img src="https://img.icons8.com/ios-filled/50/ffffff/github.png" alt="GitHub"></a>
+                <a href="https://www.linkedin.com/in/vishwambhara-r-hebbalalu" target="_blank" aria-label="LinkedIn"><img src="https://img.icons8.com/ios-filled/50/ffffff/linkedin.png" alt="LinkedIn"></a>
+                <a href="https://huggingface.co/your-profile" target="_blank" aria-label="Hugging Face"><img src="huggingface.svg" alt="Hugging Face"></a>
+                <a href="https://www.instagram.com/your-instagram-handle" target="_blank" aria-label="Instagram"><img src="https://img.icons8.com/ios-filled/50/ffffff/instagram-new--v1.png" alt="Instagram"></a>
+                <a href="https://x.com/your-x-handle" target="_blank" aria-label="X (Twitter)"><img src="https://img.icons8.com/ios-filled/50/ffffff/twitterx--v1.png" alt="X (Twitter)"></a>
+                <a href="https://your-first-blogger-url.blogspot.com" target="_blank" aria-label="Blogger 1"><img src="https://img.icons8.com/ios-filled/50/ffffff/blogger.png" alt="Blogger"></a>
+                <a href="https://your-second-blogger-url.blogspot.com" target="_blank" aria-label="Blogger 2"><img src="https://img.icons8.com/ios-filled/50/ffffff/blogger.png" alt="Blogger"></a>
+                <a href="mailto:your.email@example.com" aria-label="Email"><img src="https://img.icons8.com/ios-filled/50/ffffff/mail.png" alt="Email"></a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const hamburger = document.getElementById('hamburger');
+        const navMenu = document.getElementById('navMenu');
+
+        hamburger.addEventListener('click', () => {
+          navMenu.classList.toggle('active');
+          hamburger.classList.toggle('open');
+        });
+
+        document.addEventListener('click', (e) => {
+            if (!hamburger.contains(e.target) && !navMenu.contains(e.target)) {
+                navMenu.classList.remove('active');
+                hamburger.classList.remove('open');
+            }
+        });
+    </script>
+</body>
+</html>
