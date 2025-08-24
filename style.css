@@ -7,7 +7,7 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6 {
-    font-family: 'Georgia', serif; /* A more elegant font for headings */
+    font-family: 'Helvetica', serif; /* A more elegant font for headings */
     color: #ffffff;
 }
 
@@ -511,8 +511,8 @@ p {
 }
 
 .profile-photo {
-    width: 200px; /* Fixed width for the photo */
-    height: 200px; /* Fixed height for the photo */
+    width: 300px; /* Fixed width for the photo */
+    height: 300px; /* Fixed height for the photo */
     border-radius: 50%; /* Makes it perfectly circular */
     object-fit: cover; /* Ensures the image covers the area without distortion */
     border: 3px solid rgba(255, 255, 255, 0.2); /* Subtle white border */
@@ -542,4 +542,18 @@ p {
     .profile-caption {
         font-size: 1rem;
     }
+}
+
+.mycontainer {
+  width:100%;
+  overflow:auto;
+  align-items: center;
+  display: flex;
+  margin: 0 auto;
+}
+.mycontainer div {
+  width:50%;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
 }
