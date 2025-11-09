@@ -552,7 +552,7 @@ p {
   margin: 0 auto;
 }
 .mycontainer div {
-  width:50%;
+  width:100%;
   justify-content: center;
   align-items: center;
   margin: 0 auto;
