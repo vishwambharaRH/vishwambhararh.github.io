@@ -114,9 +114,13 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .nav-link:hover {
-    background: rgba(255, 255, 255, 0.15); /* Stronger hover effect */
-    color: #e0e0e0;
+    background: rgba(255, 255, 255, 0.10);
+    color: #61dafb;
+    transform: translateY(-4px);
+    box-shadow: 0 6px 18px rgba(97, 218, 251, 0.25);
+    border-radius: 6px;
 }
+
 
 /* Mobile styles for navigation */
 @media (max-width: 767px) {
@@ -188,25 +192,20 @@ h1, h2, h3, h4, h5, h6 {
     padding: 0 1rem; /* Ensure padding for grids */
 }
 
-.project-card, .photo-category-card {
-    background: rgba(255, 255, 255, 0.05);
-    border-radius: 10px; /* Slightly less rounded */
-    padding: 2rem;
-    transition: all 0.3s ease;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(5px); /* Slightly less blur */
-    text-align: left; /* Align text within cards */
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between; /* Distribute space */
-    min-height: 180px; /* Ensure a minimum height for cards */
+.photo-category-card {
+    transition: transform 0.25s ease, 
+                box-shadow 0.25s ease, 
+                background 0.25s ease,
+                filter 0.25s ease;
 }
 
-.project-card:hover, .photo-category-card:hover {
-    transform: translateY(-8px); /* Less aggressive lift */
-    box-shadow: 0 8px 25px rgba(255, 255, 255, 0.1);
-    background: rgba(255, 255, 255, 0.08);
+.photo-category-card:hover {
+    transform: translateY(-6px) scale(1.03);
+    box-shadow: 0 10px 30px rgba(97, 218, 251, 0.2);
+    background: rgba(255, 255, 255, 0.10);
+    filter: brightness(1.15);
 }
+
 
 .project-card h3, .photo-category-card h3 {
     font-size: 1.4rem; /* Slightly smaller heading for cards */
@@ -557,3 +556,150 @@ p {
   align-items: center;
   margin: 0 auto;
 }
+
+/* GitHub & Codeberg Project Columns */
+/* Centered header + icons */
+.project-header-centered {
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.centered-icon {
+    display: block;
+    margin: 0 auto 1rem auto;
+    width: 70px;
+    height: 70px;
+    opacity: 0.95;
+    filter: drop-shadow(0 0 6px rgba(255,255,255,0.25));
+}
+
+.project-purpose {
+    font-size: 0.95rem;
+    color: #bbb;
+    max-width: 300px;
+    margin: 0.5rem auto 1.5rem auto;
+    line-height: 1.5;
+}
+
+/* Make both project columns equal-sized */
+.projects-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    gap: 3rem;
+    margin-top: 3rem;
+    flex-wrap: wrap;
+}
+
+.project-column {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 14px;
+    padding: 2rem;
+    width: 460px;
+    max-width: 95%;
+    box-shadow: 0 8px 25px rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(6px);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.project-column:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 30px rgba(255, 255, 255, 0.15);
+}
+
+/* Adjust list spacing */
+.project-list li {
+    margin: 0.85rem 0;
+}
+
+.project-list a {
+    color: #cfe8ff;
+    text-decoration: none;
+    font-size: 1.1rem;
+    transition: color 0.25s ease, border-color 0.25s ease;
+    border-bottom: 1px solid transparent;
+}
+
+.project-list a:hover {
+    color: #61dafb;
+    border-bottom-color: #61dafb;
+}
+
+/* Responsive layout */
+@media (max-width: 768px) {
+    .projects-wrapper {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .project-column {
+        width: 95%;
+        margin-bottom: 2rem;
+    }
+}
+
+/* Grid inside GitHub/Codeberg containers */
+.inner-project-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.2rem;
+}
+
+/* Small cards inside the main column */
+.inner-project-card {
+    background: rgba(255, 255, 255, 0.06);
+    border-radius: 10px;
+    padding: 1.4rem;
+    text-align: left;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.35);
+    backdrop-filter: blur(4px);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    min-height: 120px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.inner-project-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 8px 30px rgba(255, 255, 255, 0.18);
+    background: rgba(255, 255, 255, 0.09);
+}
+
+.inner-project-card h4 {
+    margin: 0 0 0.4rem;
+    font-size: 1.2rem;
+    color: #ffffff;
+}
+
+.inner-project-card p {
+    margin: 0 0 1rem;
+    font-size: 0.92rem;
+    color: #cccccc;
+}
+
+.inner-project-card a {
+    margin-top: auto;
+    color: #61dafb;
+    text-decoration: none;
+    font-weight: bold;
+    border-bottom: 1px solid transparent;
+    transition: 0.25s ease;
+}
+
+.inner-project-card a:hover {
+    color: #a8e8ff;
+    border-bottom-color: #61dafb;
+}
+
+/* On larger screens, show 2 mini-cards per row */
+@media (min-width: 900px) {
+    .inner-project-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
