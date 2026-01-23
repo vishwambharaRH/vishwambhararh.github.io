@@ -1,4 +1,4 @@
-import { Mail, Github, Linkedin, Twitter } from 'lucide-react'
+import { Mail, Github, Linkedin, Instagram } from 'lucide-react'
 
 export default function Contact() {
   return (
@@ -11,21 +11,21 @@ export default function Contact() {
         </p>
 
         <div className="flex justify-center gap-8 mb-12">
-          <a href="mailto:vishwam@example.com" className="flex items-center gap-2 hover:text-gray-300 transition-colors">
+          <a href="mailto:vishwam.but.developer@gmail.com" className="flex items-center gap-2 hover:text-gray-300 transition-colors">
             <Mail className="w-6 h-6" />
             <span>Email</span>
           </a>
-          <a href="https://github.com/yourusername" className="flex items-center gap-2 hover:text-gray-300 transition-colors">
+          <a href="https://github.com/vishwambharaRH" className="flex items-center gap-2 hover:text-gray-300 transition-colors">
             <Github className="w-6 h-6" />
             <span>GitHub</span>
           </a>
-          <a href="https://linkedin.com/in/yourprofile" className="flex items-center gap-2 hover:text-gray-300 transition-colors">
+          <a href="https://linkedin.com/in/vishwambharah" className="flex items-center gap-2 hover:text-gray-300 transition-colors">
             <Linkedin className="w-6 h-6" />
             <span>LinkedIn</span>
           </a>
-          <a href="https://twitter.com/yourusername" className="flex items-center gap-2 hover:text-gray-300 transition-colors">
-            <Twitter className="w-6 h-6" />
-            <span>Twitter</span>
+          <a href="https://instagram.com/supernallyearthy" className="flex items-center gap-2 hover:text-gray-300 transition-colors">
+            <Instagram className="w-6 h-6" />
+            <span>Instagram</span>
           </a>
         </div>
 

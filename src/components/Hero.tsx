@@ -17,11 +17,6 @@ export default function Hero() {
         <p className="text-xl md:text-2xl text-gray-300 mb-8 max-w-2xl mx-auto">
           I am Vishwambhara R Hebbalalu, a third-year Computer Science student at PES University, with a strong interest in machine learning, linguistics, and artificial intelligence.
         </p>
-        <p className="text-lg text-gray-400 mb-12 max-w-xl mx-auto">
-          I've worked on small-scale proof-of-concept projects in these domains, and I'm eager to explore how intelligent perception and decision-making can be applied to real-life scenarios that demand the same.
-          Beyond tech, I'm a trained Carnatic classical musician (17+ years), and I write short stories and blog posts. I believe this blend of structured rigor and creative thinking allows me to approach technical challenges with both discipline and fresh perspective.
-
-        </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <button
             onClick={() => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })}

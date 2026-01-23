@@ -6,13 +6,13 @@ export default function About() {
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div>
             <p className="text-lg text-gray-300 mb-6">
-              I'm a passionate full-stack developer with a keen interest in artificial intelligence and machine learning.
-              With experience in modern web technologies and a background in data science, I love creating applications
-              that solve real-world problems.
+              I've worked on small-scale proof-of-concept projects in domains like linguistics, machine learning, web and app development, and so on. 
+              I'm eager to explore how intelligent perception and decision-making can be applied to real-life scenarios that demand the same.
             </p>
             <p className="text-lg text-gray-300 mb-6">
-              When I'm not coding, you can find me exploring new technologies, contributing to open-source projects,
-              or diving into the latest research in AI and computer vision.
+              Beyond tech, I'm a trained Carnatic classical musician (17+ years), and I write short stories and blog posts. 
+              I believe this blend of structured rigor and creative thinking allows me to approach technical challenges with both discipline and fresh perspective.
+              I also love photography and capturing the beauty of the world around me.
             </p>
             <div className="flex flex-wrap gap-3">
               {['React', 'TypeScript', 'Python', 'Node.js', 'Machine Learning', 'Computer Vision'].map((skill) => (
