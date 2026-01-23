@@ -1,4 +1,4 @@
-// @ts-ignore
+// @ts-expect-error: LightRays component uses JSX that may not be properly typed
 import LightRays from './LightRays'
 
 export default function Background() {

@@ -1,4 +1,4 @@
-import { ChevronDown } from 'lucide-react'
+import { ChevronDown, Download } from 'lucide-react'
 
 export default function Hero() {
   const scrollToAbout = () => {
@@ -18,6 +18,14 @@ export default function Hero() {
           I am Vishwambhara R Hebbalalu, a third-year Computer Science student at PES University, with a strong interest in machine learning, linguistics, and artificial intelligence.
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <a
+            href="/resume.pdf"
+            download
+            className="px-8 py-3 bg-white text-black rounded-lg font-semibold hover:bg-gray-200 transition-colors flex items-center gap-2"
+          >
+            <Download className="w-4 h-4" />
+            Download Resume
+          </a>
           <button
             onClick={() => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })}
             className="px-8 py-3 bg-white text-black rounded-lg font-semibold hover:bg-gray-200 transition-colors"
