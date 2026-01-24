@@ -3,7 +3,7 @@ export default function About() {
     <section id="about" className="py-20 px-4">
       <div className="max-w-4xl mx-auto">
         <h2 className="text-4xl font-bold text-center mb-12">About Me</h2>
-        <div className="grid md:grid-cols-2 gap-12 items-center">
+        <div className="text-center space-y-8">
           <div>
             <p className="text-lg text-gray-300 mb-6">
               I've worked on small-scale proof-of-concept projects in domains like linguistics, machine learning, web and app development, and so on. 
@@ -20,11 +20,6 @@ export default function About() {
                   {skill}
                 </span>
               ))}
-            </div>
-          </div>
-          <div className="text-center">
-            <div className="w-64 h-64 mx-auto bg-gradient-to-br from-gray-600 to-gray-800 rounded-full flex items-center justify-center">
-              <span className="text-6xl">👨‍💻</span>
             </div>
           </div>
         </div>
