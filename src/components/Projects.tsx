@@ -49,7 +49,7 @@ const projects: Project[] = [
   {
     title: 'Tapper-App',
     description: 'Tap away!',
-    technologies: ['Python', 'NLTK', 'SpaCy', 'React'],
+    technologies: ['JavaScript', 'ReactNative', 'Expo', 'Play Store'],
     github: 'https://github.com/vishwambharaRH/Tapper-App',
   },
   {
