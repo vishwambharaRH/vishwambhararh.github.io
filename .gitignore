@@ -10,6 +10,8 @@ lerna-debug.log*
 
 node_modules
 *.local
+# Allow dist folder to be committed
+!dist/
 
 # Editor directories and files
 .vscode/*
