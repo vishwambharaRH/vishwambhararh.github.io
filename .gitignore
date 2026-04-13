@@ -26,4 +26,4 @@ node_modules
 *.njsproj
 *.sln
 *.sw?
-.env.local.example
+.env.*.example
