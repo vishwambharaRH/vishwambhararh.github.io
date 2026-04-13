@@ -12,7 +12,6 @@ node_modules
 *.local
 .env
 .env.local
-.env.local.example
 
 # Allow dist folder to be committed
 !dist/
