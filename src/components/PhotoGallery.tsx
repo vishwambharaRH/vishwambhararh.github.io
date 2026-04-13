@@ -17,7 +17,7 @@ const categories: Category[] = ["Architecture", "Urbanscape", "Landscape", "Natu
 const photos: PhotoItem[] = [
   // Architecture
   {
-    src: "public/photos/architecture/architecture-photo1.webp",
+    src: "dist/photos/architecture/architecture-photo1.webp",
     alt: "Narasimha killing Hiranyakaśipu",
     category: "Architecture",
     location: "Halebeedu, Karnataka",
