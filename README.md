@@ -47,6 +47,41 @@ npm run build
 
 The build output will be in the `dist` folder.
 
+## Deployment to GitHub Pages
+
+This project is configured for automatic deployment to GitHub Pages via GitHub Actions.
+
+### GitHub Pages with Secrets (EmailJS)
+
+For the contact form to work on GitHub Pages static deployment:
+
+1. **Get EmailJS Credentials**:
+   - Sign up at [emailjs.com](https://www.emailjs.com)
+   - Create a service, email template, and get your public key
+
+2. **Add GitHub Secrets**:
+   - Go to repository Settings → Secrets and variables → Actions
+   - Add these secrets:
+     - `EMAILJS_SERVICE_ID` - Your EmailJS service ID
+     - `EMAILJS_TEMPLATE_ID` - Your EmailJS template ID
+     - `EMAILJS_PUBLIC_KEY` - Your EmailJS public key
+
+3. **Local Development**:
+   - Copy `.env.local.example` to `.env.local`
+   - Fill in your EmailJS credentials
+   - `.env.local` is ignored by git (never commit secrets!)
+
+4. **Automatic Deployment**:
+   - Push to `main` or `master` branch
+   - GitHub Actions automatically builds and deploys to GitHub Pages
+   - Check Actions tab to see build status
+
+### Environment Variables
+
+- `VITE_EMAILJS_SERVICE_ID` - EmailJS service ID (required for contact form)
+- `VITE_EMAILJS_TEMPLATE_ID` - EmailJS template ID (required for contact form)  
+- `VITE_EMAILJS_PUBLIC_KEY` - EmailJS public key (required for contact form)
+
 ## Project Structure
 
 ```
