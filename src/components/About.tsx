@@ -6,13 +6,17 @@ export default function About() {
         <div className="text-center space-y-8">
           <div>
             <p className="text-lg text-gray-300 mb-6">
-              I've worked on small-scale proof-of-concept projects in domains like linguistics, machine learning, web and app development, and so on. 
-              I'm eager to explore how intelligent perception and decision-making can be applied to real-life scenarios that demand the same.
+              I'm a student of computer science and music.
+              I navigate the intersections of technology, art, and nature with a keen eye for detail and structure. 
+              My work spans machine learning, computer vision, and AI-driven applications—building solutions that are both functional and forward-thinking.
             </p>
             <p className="text-lg text-gray-300 mb-6">
-              Beyond tech, I'm a trained Carnatic classical musician (17+ years), and I write short stories and blog posts. 
-              I believe this blend of structured rigor and creative thinking allows me to approach technical challenges with both discipline and fresh perspective.
-              I also love photography and capturing the beauty of the world around me.
+              I'm also deeply interested in robotics and automation, with an intent to further study systems design and development.
+            </p>
+            <p className="text-lg text-gray-300 mb-6">
+              Beyond technology, I study Carnatic music and literature, appreciating the precision and depth they demand. As a connoisseur of art and an 
+              observer of nature, I find parallels between structured creativity and organic evolution.
+              I approach problems with an analytical mindset, balancing technical rigor with an appreciation for aesthetics and form.
             </p>
             <div className="flex flex-wrap gap-3">
               {['React', 'TypeScript', 'Python', 'Node.js', 'Machine Learning', 'Computer Vision'].map((skill) => (
@@ -27,3 +31,7 @@ export default function About() {
     </section>
   )
 }
+
+
+
+
