@@ -15,7 +15,7 @@ export default function Hero() {
           Vishwambhara R Hebbalalu
         </h1>
         <p className="text-xl md:text-2xl text-gray-300 mb-8 max-w-2xl mx-auto">
-          I am Vishwambhara R Hebbalalu, a third-year Computer Science student at PES University, with a strong interest in machine learning, linguistics, and artificial intelligence.
+          I am Vishwambhara R Hebbalalu, a senior year Computer Science student at PES University, with a strong interest in machine learning, linguistics, and artificial intelligence.
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <a
