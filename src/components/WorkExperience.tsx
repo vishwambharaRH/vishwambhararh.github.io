@@ -1,6 +1,14 @@
 import { Calendar, MapPin } from 'lucide-react'
 
 const experiences = [
+   {
+    title: 'Intern',
+    company: 'MARS Labs CIoT - PESU',
+    location: 'PES University, Bengaluru',
+    period: 'June 2026 - August 2026',
+    description: 'Worked on a project involving the development of a web-based cardiac motion visualization tool, triggered by ECG signals. ECG data was preprocessed and analyzed to extract PQRST timing rules, artifacts and noise. I worked on the machine learning aspect, and trained a PQRST detection CNN-BiLSTM with physiological priors (paper submitted on the same).',
+    technologies: ['Python', 'PyTorch', 'MPS', 'Pan-Tompkins Algorithm', 'ECG Signal Processing', 'CNN-BiLSTM']
+  },
   {
     title: 'Consultancy Intern',
     company: 'Sarasvatam',
@@ -13,10 +21,10 @@ const experiences = [
     title: 'Web Developer',
     company: 'GCube - PESU',
     location: 'Remote',
-    period: 'April 2025 - onwards',
+    period: 'April 2025 - Dec 2025',
     description: 'Part of web development team for the PESU gaming club, GCube.',
     technologies: ['React', 'Node.js', 'MongoDB', 'Express']
-  }
+  },
 ]
 
 export default function WorkExperience() {
