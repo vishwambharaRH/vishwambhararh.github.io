@@ -1,7 +1,15 @@
 import { Calendar, MapPin } from 'lucide-react'
 
 const experiences = [
-   {
+  {
+    title: 'Teaching Assistant',
+    company: 'PES University',
+    location: 'Bengaluru',
+    period: 'August 2026 - December 2026',
+    description: 'Handling lab curriculum and demonstrations for the subject of Software Engineering, taken by junior year (5th semester) students.',
+    technologies: ['Curriculum Design', 'Lab Assignment Creation', 'Teaching']
+  },
+  {
     title: 'Intern',
     company: 'MARS Labs CIoT - PESU',
     location: 'PES University, Bengaluru',
